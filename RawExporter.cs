@@ -220,17 +220,17 @@ namespace Assets.Editor.Rexporter
             };
 			rootVisualElement.Add(loadButton);
 
-			VisualElement space3 = new VisualElement();
+            Button refreshButton = new Button();
+            refreshButton.text = "Refresh presets";
+            refreshButton.clicked += () =>
+            {
+				RefreshPresets();
+            };
+            rootVisualElement.Add(refreshButton);
+
+            VisualElement space3 = new VisualElement();
 			space3.style.height = new StyleLength(25);
 			rootVisualElement.Add(space3);
-
-			Button refreshButton = new Button();
-			refreshButton.text = "Refresh presets";
-			refreshButton.clicked += () =>
-			{
-				allPresets = Resources.FindObjectsOfTypeAll<RawExporterPreset>();
-			};
-			//rootVisualElement.Add(refreshButton);
 
 			VisualElement space4 = new VisualElement();
 			space4.style.height = new StyleLength(25);
